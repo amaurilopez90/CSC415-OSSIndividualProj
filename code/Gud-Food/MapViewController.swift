@@ -22,12 +22,37 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
-    let manager = CLLocationManager()
+    //set up required variables
+    private let manager = CLLocationManager()
     private let reuseIdentifier = "MyIdentifier"
+    private var myLocation = CLLocationCoordinate2D()
+    private var span = MKCoordinateSpan()
+    private var region = MKCoordinateRegion()
+    
+    //getters and setters
+    func setMyLocation(_ coordinate: CLLocationCoordinate2D){
+        myLocation = coordinate
+    }
+    
+    func getMyLocation() -> CLLocationCoordinate2D{
+        return myLocation
+    }
+    func setSpan(_ latitude: CLLocationDegrees, longitude: CLLocationDegrees){
+        span = MKCoordinateSpanMake(latitude, longitude)
+    }
+    func getSpan() -> MKCoordinateSpan{
+        return span
+    }
+    func setRegion(_ center: CLLocationCoordinate2D, span: MKCoordinateSpan){
+        region = MKCoordinateRegionMake(center, span)
+    }
+    func getRegion() -> MKCoordinateRegion{
+        return region
+    }
     
     //annotation view customization
-    func mapView(mapView: MKMapView, viewFor annotation:MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation {return nil}
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if (annotation.coordinate.latitude == myLocation.latitude && annotation.coordinate.longitude == myLocation.longitude) {return nil} //if the annotation is the users location, then don't bother with customizing the annotation
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as? MKPinAnnotationView
         if annotationView == nil{
@@ -36,17 +61,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         } else { annotationView?.annotation = annotation }
         
         return annotationView
+
     }
     
-    //what happens when the user selects and deselects an annotation
-    func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
-        if !(annotation is MKUserLocation){
+    //When user selects and deselects annotations, enable/disable the 'route' btn
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if !(view.annotation?.coordinate.latitude == myLocation.latitude && view.annotation?.coordinate.longitude == myLocation.longitude){ //don't enable the 'Route' button if the selected annotation is the user's own location
             BtnRoute.isEnabled = true
         }
+
     }
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         BtnRoute.isEnabled = false
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,11 +134,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         dunkinDonutsAnnotation.subtitle = "2085 Pennington Rd"
         
         //set up initial display of Map
-        let myLocation = manager.location?.coordinate //get users current location coordinates
+        myLocation = (manager.location?.coordinate)!
         
-        var span = MKCoordinateSpanMake(0.02, 0.02)
-        var region = MKCoordinateRegionMake(myLocation!, span)
-        
+        span = MKCoordinateSpanMake(0.02, 0.02)
+        region = MKCoordinateRegionMake(myLocation, span)
+
         Map.setRegion(region, animated: true)
         Map.addAnnotation(paneraAnnotation)
         Map.addAnnotation(piccoloAnnotation)
