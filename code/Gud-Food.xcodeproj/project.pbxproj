@@ -19,6 +19,7 @@
 		7B4CFF531FCF7F0F005E8A7E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CFF521FCF7F0F005E8A7E /* SWRevealViewController.m */; };
 		7B4CFF551FCF82B7005E8A7E /* NavTabTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CFF541FCF82B7005E8A7E /* NavTabTableVC.swift */; };
 		7B4CFF571FCF8579005E8A7E /* MapSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CFF561FCF8579005E8A7E /* MapSettings.swift */; };
+		7B86E9211FD09BEA00DB4F6C /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86E9201FD09BEA00DB4F6C /* Routing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		7B4CFF521FCF7F0F005E8A7E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		7B4CFF541FCF82B7005E8A7E /* NavTabTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTabTableVC.swift; sourceTree = "<group>"; };
 		7B4CFF561FCF8579005E8A7E /* MapSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSettings.swift; sourceTree = "<group>"; };
+		7B86E9201FD09BEA00DB4F6C /* Routing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				7B4CFF4F1FCF7D37005E8A7E /* Supporting Files */,
 				7B4CFF1C1FCF7BFB005E8A7E /* AppDelegate.swift */,
 				7B4CFF1E1FCF7BFB005E8A7E /* MapViewController.swift */,
+				7B86E9201FD09BEA00DB4F6C /* Routing.swift */,
 				7B4CFF201FCF7BFB005E8A7E /* Main.storyboard */,
 				7B4CFF561FCF8579005E8A7E /* MapSettings.swift */,
 				7B4CFF541FCF82B7005E8A7E /* NavTabTableVC.swift */,
@@ -299,6 +302,7 @@
 			files = (
 				7B4CFF1F1FCF7BFB005E8A7E /* MapViewController.swift in Sources */,
 				7B4CFF1D1FCF7BFB005E8A7E /* AppDelegate.swift in Sources */,
+				7B86E9211FD09BEA00DB4F6C /* Routing.swift in Sources */,
 				7B4CFF531FCF7F0F005E8A7E /* SWRevealViewController.m in Sources */,
 				7B4CFF551FCF82B7005E8A7E /* NavTabTableVC.swift in Sources */,
 				7B4CFF571FCF8579005E8A7E /* MapSettings.swift in Sources */,
@@ -553,6 +557,7 @@
 				7B4CFF431FCF7BFB005E8A7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B4CFF441FCF7BFB005E8A7E /* Build configuration list for PBXNativeTarget "Gud-FoodTests" */ = {
 			isa = XCConfigurationList;
@@ -561,6 +566,7 @@
 				7B4CFF461FCF7BFB005E8A7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B4CFF471FCF7BFB005E8A7E /* Build configuration list for PBXNativeTarget "Gud-FoodUITests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +575,7 @@
 				7B4CFF491FCF7BFB005E8A7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

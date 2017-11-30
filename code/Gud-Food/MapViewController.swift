@@ -17,17 +17,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var OpenNavTab: UIBarButtonItem!
     @IBOutlet weak var BtnRoute: UIBarButtonItem!
     
-    
-    @IBAction func Route(_ sender: Any) {
-        
-    }
-    
     //set up required variables
     private let manager = CLLocationManager()
     private let reuseIdentifier = "MyIdentifier"
     private var myLocation = CLLocationCoordinate2D()
     private var span = MKCoordinateSpan()
     private var region = MKCoordinateRegion()
+    private var destination = MKPointAnnotation()
+    var routeIt = Routing()
     
     //getters and setters
     func setMyLocation(_ coordinate: CLLocationCoordinate2D){
@@ -49,6 +46,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func getRegion() -> MKCoordinateRegion{
         return region
     }
+    func getReuseIdentifier() -> String{
+        return reuseIdentifier
+    }
     
     //annotation view customization
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -68,6 +68,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if !(view.annotation?.coordinate.latitude == myLocation.latitude && view.annotation?.coordinate.longitude == myLocation.longitude){ //don't enable the 'Route' button if the selected annotation is the user's own location
             BtnRoute.isEnabled = true
+            destination = view.annotation as! MKPointAnnotation //set the target destination as the currently selected location
         }
 
     }
@@ -75,6 +76,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         BtnRoute.isEnabled = false
     }
     
+    @IBAction func Route(_ sender: UIBarButtonItem) {
+        routeIt.Route(destination: destination)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

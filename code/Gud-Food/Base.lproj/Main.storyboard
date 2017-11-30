@@ -336,7 +336,7 @@
                         <barButtonItem key="leftBarButtonItem" title="&gt;" id="XgI-83-Su8"/>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Route" id="qfs-dZ-1ec">
                             <connections>
-                                <action selector="Route:" destination="UnQ-dM-doO" id="dxj-T3-BcW"/>
+                                <action selector="Route:" destination="UnQ-dM-doO" id="dvF-2D-aUe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
