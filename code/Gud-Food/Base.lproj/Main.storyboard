@@ -132,8 +132,16 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem id="fFv-KQ-HMO">
-                                    <barButtonItem key="leftBarButtonItem" systemItem="undo" id="u5D-M3-PWR"/>
-                                    <barButtonItem key="rightBarButtonItem" systemItem="save" id="KL4-8g-PH4"/>
+                                    <barButtonItem key="leftBarButtonItem" enabled="NO" systemItem="undo" id="u5D-M3-PWR">
+                                        <connections>
+                                            <action selector="undoChanges:" destination="955-Rw-95C" id="KJG-lh-Pvn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="KL4-8g-PH4">
+                                        <connections>
+                                            <action selector="saveSettings:" destination="955-Rw-95C" id="wmJ-4Q-p0v"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -161,6 +169,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Is6-hi-Brh" secondAttribute="height" multiplier="49:31" id="oWC-mN-LTe"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="stampValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="wp1-W3-Iqb"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -194,6 +205,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Xhq-rA-gXa" secondAttribute="height" multiplier="49:31" id="evB-dc-IOR"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="drivingValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="Fhh-Xa-8Oj"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -227,6 +241,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="kRf-59-WT4" secondAttribute="height" multiplier="49:31" id="Itx-Xz-VWK"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="busValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="ejt-HP-dyX"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -260,6 +277,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="aXC-DF-G3c" secondAttribute="height" multiplier="49:31" id="KRw-ws-xe9"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="walkingValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="3ap-4W-6Zm"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -284,7 +304,13 @@
                         <barButtonItem key="leftBarButtonItem" title="&gt;" id="BPc-Ru-Fzm"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="BusSwitch" destination="kRf-59-WT4" id="6sp-aR-xxy"/>
+                        <outlet property="DrivingSwitch" destination="Xhq-rA-gXa" id="GB6-wt-SmD"/>
                         <outlet property="OpenNavTab" destination="BPc-Ru-Fzm" id="KMW-Pl-bDG"/>
+                        <outlet property="SaveSettingsButton" destination="KL4-8g-PH4" id="jLO-Lk-Fk9"/>
+                        <outlet property="StampsSwitch" destination="Is6-hi-Brh" id="DIu-9f-Fd6"/>
+                        <outlet property="UndoSettingChangesButton" destination="u5D-M3-PWR" id="0pP-wP-pUo"/>
+                        <outlet property="WalkingSwitch" destination="aXC-DF-G3c" id="Oos-wk-BJI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFN-vS-y24" userLabel="First Responder" sceneMemberID="firstResponder"/>
