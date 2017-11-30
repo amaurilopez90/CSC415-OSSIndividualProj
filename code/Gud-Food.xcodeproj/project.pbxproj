@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B4CFF1D1FCF7BFB005E8A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CFF1C1FCF7BFB005E8A7E /* AppDelegate.swift */; };
+		7B4CFF1F1FCF7BFB005E8A7E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CFF1E1FCF7BFB005E8A7E /* MapViewController.swift */; };
+		7B4CFF221FCF7BFB005E8A7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4CFF201FCF7BFB005E8A7E /* Main.storyboard */; };
+		7B4CFF241FCF7BFB005E8A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B4CFF231FCF7BFB005E8A7E /* Assets.xcassets */; };
+		7B4CFF271FCF7BFB005E8A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4CFF251FCF7BFB005E8A7E /* LaunchScreen.storyboard */; };
+		7B4CFF321FCF7BFB005E8A7E /* Gud_FoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CFF311FCF7BFB005E8A7E /* Gud_FoodTests.swift */; };
+		7B4CFF3D1FCF7BFB005E8A7E /* Gud_FoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CFF3C1FCF7BFB005E8A7E /* Gud_FoodUITests.swift */; };
+		7B4CFF4C1FCF7C54005E8A7E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4CFF4B1FCF7C54005E8A7E /* MapKit.framework */; };
+		7B4CFF4E1FCF7C60005E8A7E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4CFF4D1FCF7C60005E8A7E /* CoreLocation.framework */; };
+		7B4CFF531FCF7F0F005E8A7E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CFF521FCF7F0F005E8A7E /* SWRevealViewController.m */; };
+		7B4CFF551FCF82B7005E8A7E /* NavTabTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CFF541FCF82B7005E8A7E /* NavTabTableVC.swift */; };
+		7B4CFF571FCF8579005E8A7E /* MapSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CFF561FCF8579005E8A7E /* MapSettings.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B4CFF2E1FCF7BFB005E8A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B4CFF111FCF7BFB005E8A7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B4CFF181FCF7BFB005E8A7E;
+			remoteInfo = "Gud-Food";
+		};
+		7B4CFF391FCF7BFB005E8A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B4CFF111FCF7BFB005E8A7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B4CFF181FCF7BFB005E8A7E;
+			remoteInfo = "Gud-Food";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7B4CFF191FCF7BFB005E8A7E /* Gud-Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gud-Food.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B4CFF1C1FCF7BFB005E8A7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7B4CFF1E1FCF7BFB005E8A7E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7B4CFF211FCF7BFB005E8A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7B4CFF231FCF7BFB005E8A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B4CFF261FCF7BFB005E8A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7B4CFF281FCF7BFB005E8A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B4CFF2D1FCF7BFB005E8A7E /* Gud-FoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud-FoodTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B4CFF311FCF7BFB005E8A7E /* Gud_FoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_FoodTests.swift; sourceTree = "<group>"; };
+		7B4CFF331FCF7BFB005E8A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B4CFF381FCF7BFB005E8A7E /* Gud-FoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gud-FoodUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B4CFF3C1FCF7BFB005E8A7E /* Gud_FoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gud_FoodUITests.swift; sourceTree = "<group>"; };
+		7B4CFF3E1FCF7BFB005E8A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B4CFF4B1FCF7C54005E8A7E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7B4CFF4D1FCF7C60005E8A7E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7B4CFF501FCF7F0E005E8A7E /* Gud-Food-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gud-Food-Bridging-Header.h"; sourceTree = "<group>"; };
+		7B4CFF511FCF7F0F005E8A7E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		7B4CFF521FCF7F0F005E8A7E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		7B4CFF541FCF82B7005E8A7E /* NavTabTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTabTableVC.swift; sourceTree = "<group>"; };
+		7B4CFF561FCF8579005E8A7E /* MapSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSettings.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B4CFF161FCF7BFB005E8A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B4CFF4E1FCF7C60005E8A7E /* CoreLocation.framework in Frameworks */,
+				7B4CFF4C1FCF7C54005E8A7E /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B4CFF2A1FCF7BFB005E8A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B4CFF351FCF7BFB005E8A7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B4CFF101FCF7BFB005E8A7E = {
+			isa = PBXGroup;
+			children = (
+				7B4CFF1B1FCF7BFB005E8A7E /* Gud-Food */,
+				7B4CFF301FCF7BFB005E8A7E /* Gud-FoodTests */,
+				7B4CFF3B1FCF7BFB005E8A7E /* Gud-FoodUITests */,
+				7B4CFF1A1FCF7BFB005E8A7E /* Products */,
+				7B4CFF4A1FCF7C54005E8A7E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7B4CFF1A1FCF7BFB005E8A7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B4CFF191FCF7BFB005E8A7E /* Gud-Food.app */,
+				7B4CFF2D1FCF7BFB005E8A7E /* Gud-FoodTests.xctest */,
+				7B4CFF381FCF7BFB005E8A7E /* Gud-FoodUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B4CFF1B1FCF7BFB005E8A7E /* Gud-Food */ = {
+			isa = PBXGroup;
+			children = (
+				7B4CFF4F1FCF7D37005E8A7E /* Supporting Files */,
+				7B4CFF1C1FCF7BFB005E8A7E /* AppDelegate.swift */,
+				7B4CFF1E1FCF7BFB005E8A7E /* MapViewController.swift */,
+				7B4CFF201FCF7BFB005E8A7E /* Main.storyboard */,
+				7B4CFF561FCF8579005E8A7E /* MapSettings.swift */,
+				7B4CFF541FCF82B7005E8A7E /* NavTabTableVC.swift */,
+				7B4CFF231FCF7BFB005E8A7E /* Assets.xcassets */,
+				7B4CFF251FCF7BFB005E8A7E /* LaunchScreen.storyboard */,
+				7B4CFF281FCF7BFB005E8A7E /* Info.plist */,
+			);
+			path = "Gud-Food";
+			sourceTree = "<group>";
+		};
+		7B4CFF301FCF7BFB005E8A7E /* Gud-FoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B4CFF311FCF7BFB005E8A7E /* Gud_FoodTests.swift */,
+				7B4CFF331FCF7BFB005E8A7E /* Info.plist */,
+			);
+			path = "Gud-FoodTests";
+			sourceTree = "<group>";
+		};
+		7B4CFF3B1FCF7BFB005E8A7E /* Gud-FoodUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7B4CFF3C1FCF7BFB005E8A7E /* Gud_FoodUITests.swift */,
+				7B4CFF3E1FCF7BFB005E8A7E /* Info.plist */,
+			);
+			path = "Gud-FoodUITests";
+			sourceTree = "<group>";
+		};
+		7B4CFF4A1FCF7C54005E8A7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B4CFF4D1FCF7C60005E8A7E /* CoreLocation.framework */,
+				7B4CFF4B1FCF7C54005E8A7E /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B4CFF4F1FCF7D37005E8A7E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B4CFF511FCF7F0F005E8A7E /* SWRevealViewController.h */,
+				7B4CFF521FCF7F0F005E8A7E /* SWRevealViewController.m */,
+				7B4CFF501FCF7F0E005E8A7E /* Gud-Food-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B4CFF181FCF7BFB005E8A7E /* Gud-Food */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B4CFF411FCF7BFB005E8A7E /* Build configuration list for PBXNativeTarget "Gud-Food" */;
+			buildPhases = (
+				7B4CFF151FCF7BFB005E8A7E /* Sources */,
+				7B4CFF161FCF7BFB005E8A7E /* Frameworks */,
+				7B4CFF171FCF7BFB005E8A7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Gud-Food";
+			productName = "Gud-Food";
+			productReference = 7B4CFF191FCF7BFB005E8A7E /* Gud-Food.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7B4CFF2C1FCF7BFB005E8A7E /* Gud-FoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B4CFF441FCF7BFB005E8A7E /* Build configuration list for PBXNativeTarget "Gud-FoodTests" */;
+			buildPhases = (
+				7B4CFF291FCF7BFB005E8A7E /* Sources */,
+				7B4CFF2A1FCF7BFB005E8A7E /* Frameworks */,
+				7B4CFF2B1FCF7BFB005E8A7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B4CFF2F1FCF7BFB005E8A7E /* PBXTargetDependency */,
+			);
+			name = "Gud-FoodTests";
+			productName = "Gud-FoodTests";
+			productReference = 7B4CFF2D1FCF7BFB005E8A7E /* Gud-FoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7B4CFF371FCF7BFB005E8A7E /* Gud-FoodUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B4CFF471FCF7BFB005E8A7E /* Build configuration list for PBXNativeTarget "Gud-FoodUITests" */;
+			buildPhases = (
+				7B4CFF341FCF7BFB005E8A7E /* Sources */,
+				7B4CFF351FCF7BFB005E8A7E /* Frameworks */,
+				7B4CFF361FCF7BFB005E8A7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B4CFF3A1FCF7BFB005E8A7E /* PBXTargetDependency */,
+			);
+			name = "Gud-FoodUITests";
+			productName = "Gud-FoodUITests";
+			productReference = 7B4CFF381FCF7BFB005E8A7E /* Gud-FoodUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B4CFF111FCF7BFB005E8A7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Amauri Lopez";
+				TargetAttributes = {
+					7B4CFF181FCF7BFB005E8A7E = {
+						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					7B4CFF2C1FCF7BFB005E8A7E = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7B4CFF181FCF7BFB005E8A7E;
+					};
+					7B4CFF371FCF7BFB005E8A7E = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7B4CFF181FCF7BFB005E8A7E;
+					};
+				};
+			};
+			buildConfigurationList = 7B4CFF141FCF7BFB005E8A7E /* Build configuration list for PBXProject "Gud-Food" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7B4CFF101FCF7BFB005E8A7E;
+			productRefGroup = 7B4CFF1A1FCF7BFB005E8A7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B4CFF181FCF7BFB005E8A7E /* Gud-Food */,
+				7B4CFF2C1FCF7BFB005E8A7E /* Gud-FoodTests */,
+				7B4CFF371FCF7BFB005E8A7E /* Gud-FoodUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B4CFF171FCF7BFB005E8A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B4CFF271FCF7BFB005E8A7E /* LaunchScreen.storyboard in Resources */,
+				7B4CFF241FCF7BFB005E8A7E /* Assets.xcassets in Resources */,
+				7B4CFF221FCF7BFB005E8A7E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B4CFF2B1FCF7BFB005E8A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B4CFF361FCF7BFB005E8A7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B4CFF151FCF7BFB005E8A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B4CFF1F1FCF7BFB005E8A7E /* MapViewController.swift in Sources */,
+				7B4CFF1D1FCF7BFB005E8A7E /* AppDelegate.swift in Sources */,
+				7B4CFF531FCF7F0F005E8A7E /* SWRevealViewController.m in Sources */,
+				7B4CFF551FCF82B7005E8A7E /* NavTabTableVC.swift in Sources */,
+				7B4CFF571FCF8579005E8A7E /* MapSettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B4CFF291FCF7BFB005E8A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B4CFF321FCF7BFB005E8A7E /* Gud_FoodTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B4CFF341FCF7BFB005E8A7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B4CFF3D1FCF7BFB005E8A7E /* Gud_FoodUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B4CFF2F1FCF7BFB005E8A7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B4CFF181FCF7BFB005E8A7E /* Gud-Food */;
+			targetProxy = 7B4CFF2E1FCF7BFB005E8A7E /* PBXContainerItemProxy */;
+		};
+		7B4CFF3A1FCF7BFB005E8A7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B4CFF181FCF7BFB005E8A7E /* Gud-Food */;
+			targetProxy = 7B4CFF391FCF7BFB005E8A7E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7B4CFF201FCF7BFB005E8A7E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B4CFF211FCF7BFB005E8A7E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7B4CFF251FCF7BFB005E8A7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B4CFF261FCF7BFB005E8A7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B4CFF3F1FCF7BFB005E8A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7B4CFF401FCF7BFB005E8A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B4CFF421FCF7BFB005E8A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Gud-Food/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SE.Gud-Food";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gud-Food/Gud-Food-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7B4CFF431FCF7BFB005E8A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Gud-Food/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SE.Gud-Food";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gud-Food/Gud-Food-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7B4CFF451FCF7BFB005E8A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Gud-FoodTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SE.Gud-FoodTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gud-Food.app/Gud-Food";
+			};
+			name = Debug;
+		};
+		7B4CFF461FCF7BFB005E8A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Gud-FoodTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SE.Gud-FoodTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gud-Food.app/Gud-Food";
+			};
+			name = Release;
+		};
+		7B4CFF481FCF7BFB005E8A7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Gud-FoodUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SE.Gud-FoodUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Gud-Food";
+			};
+			name = Debug;
+		};
+		7B4CFF491FCF7BFB005E8A7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Gud-FoodUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SE.Gud-FoodUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Gud-Food";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B4CFF141FCF7BFB005E8A7E /* Build configuration list for PBXProject "Gud-Food" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B4CFF3F1FCF7BFB005E8A7E /* Debug */,
+				7B4CFF401FCF7BFB005E8A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B4CFF411FCF7BFB005E8A7E /* Build configuration list for PBXNativeTarget "Gud-Food" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B4CFF421FCF7BFB005E8A7E /* Debug */,
+				7B4CFF431FCF7BFB005E8A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7B4CFF441FCF7BFB005E8A7E /* Build configuration list for PBXNativeTarget "Gud-FoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B4CFF451FCF7BFB005E8A7E /* Debug */,
+				7B4CFF461FCF7BFB005E8A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7B4CFF471FCF7BFB005E8A7E /* Build configuration list for PBXNativeTarget "Gud-FoodUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B4CFF481FCF7BFB005E8A7E /* Debug */,
+				7B4CFF491FCF7BFB005E8A7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B4CFF111FCF7BFB005E8A7E /* Project object */;
+}
