@@ -14,19 +14,19 @@ import CoreLocation
 class Routing {
     
     var settings = MapSettings()
-    func Route(destination: MKPointAnnotation) -> Array<MKRoute>{
+    func Route(sourceCoordinates: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) -> Array<MKRoute>{
         
         //create placemarks and map items for source and destination
-        let sourcePlacemark = MKPlacemark(coordinate: destination.coordinate)
-        let destPlacemark = MKPlacemark(coordinate: destination.coordinate)
+        let sourcePlacemark = MKPlacemark(coordinate: sourceCoordinates)
+        let destPlacemark = MKPlacemark(coordinate: destination)
         
         let sourceItem = MKMapItem(placemark: sourcePlacemark)
         let destItem = MKMapItem(placemark: destPlacemark)
         
         //set up the different kinds of direction requests
-        var drivingDirectionsRequest = MKDirectionsRequest()
-        var transitDirectionsRequest = MKDirectionsRequest()
-        var walkingDirectionsRequest = MKDirectionsRequest()
+        let drivingDirectionsRequest = MKDirectionsRequest()
+        let transitDirectionsRequest = MKDirectionsRequest()
+        let walkingDirectionsRequest = MKDirectionsRequest()
         
         drivingDirectionsRequest.transportType = .automobile
         transitDirectionsRequest.transportType = .transit
@@ -55,7 +55,7 @@ class Routing {
             directionRequest.source = sourceItem
             directionRequest.destination = destItem
             
-            var directions = MKDirections(request: directionRequest)
+            let directions = MKDirections(request: directionRequest)
             directions.calculate(completionHandler: {
                 response, error in
                 

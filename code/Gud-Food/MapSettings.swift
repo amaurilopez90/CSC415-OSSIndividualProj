@@ -34,10 +34,11 @@ class MapSettings: UITableViewController{
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer()) //add the gesture recognition
         
         //grab initial states of switches
-        SettingsTableArray[0] = StampsSwitch.isOn
-        SettingsTableArray[1] = DrivingSwitch.isOn
-        SettingsTableArray[2] = TransitSwitch.isOn
-        SettingsTableArray[3] = WalkingSwitch.isOn
+        SettingsTableArray = [StampsSwitch.isOn, DrivingSwitch.isOn, TransitSwitch.isOn, WalkingSwitch.isOn]
+//        SettingsTableArray[0] = StampsSwitch.isOn
+//        SettingsTableArray[1] = DrivingSwitch.isOn
+//        SettingsTableArray[2] = TransitSwitch.isOn
+//        SettingsTableArray[3] = WalkingSwitch.isOn
         
     }
     
@@ -64,6 +65,7 @@ class MapSettings: UITableViewController{
         drivingVal = sender.isOn
     }
     
+
     @IBAction func transitValChanged(_ sender: UISwitch) {
         SaveSettingsButton.isEnabled = true
         UndoSettingChangesButton.isEnabled = true
