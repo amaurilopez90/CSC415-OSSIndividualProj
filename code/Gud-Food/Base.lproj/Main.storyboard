@@ -111,24 +111,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Is6-hi-Brh">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="stampValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="wp1-W3-Iqb"/>
-                                                    </connections>
-                                                </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Stamps Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UO7-aT-RSg">
                                                     <rect key="frame" x="8" y="8" width="141" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saG-uR-GMJ" userLabel="Stamps Switch">
+                                                    <rect key="frame" x="321" y="7" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="stampsValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="7cX-HP-yI2"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="saG-uR-GMJ" secondAttribute="trailing" constant="5" id="829-Q4-jRq"/>
+                                                <constraint firstItem="saG-uR-GMJ" firstAttribute="top" secondItem="6EZ-bg-gCL" secondAttribute="top" constant="7" id="EPP-zx-nMg"/>
                                                 <constraint firstItem="UO7-aT-RSg" firstAttribute="top" secondItem="6EZ-bg-gCL" secondAttribute="topMargin" id="FLE-TI-eK7"/>
-                                                <constraint firstItem="Is6-hi-Brh" firstAttribute="trailing" secondItem="6EZ-bg-gCL" secondAttribute="trailingMargin" id="dM7-TB-14i"/>
+                                                <constraint firstAttribute="trailing" secondItem="saG-uR-GMJ" secondAttribute="trailing" constant="8" id="HvJ-xb-eam"/>
                                                 <constraint firstItem="UO7-aT-RSg" firstAttribute="leading" secondItem="6EZ-bg-gCL" secondAttribute="leadingMargin" id="tXs-Xh-6hl"/>
-                                                <constraint firstItem="Is6-hi-Brh" firstAttribute="centerY" secondItem="6EZ-bg-gCL" secondAttribute="centerY" id="zbY-ep-bb8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -139,24 +140,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xhq-rA-gXa">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="drivingValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="Fhh-Xa-8Oj"/>
-                                                    </connections>
-                                                </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Driving Routes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mr0-8z-EBc">
                                                     <rect key="frame" x="8" y="12" width="159" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xhq-rA-gXa">
+                                                    <rect key="frame" x="318" y="7" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="drivingValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="Fhh-Xa-8Oj"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mr0-8z-EBc" firstAttribute="leading" secondItem="byg-cq-0sd" secondAttribute="leadingMargin" id="F2I-VV-WAF"/>
                                                 <constraint firstItem="Xhq-rA-gXa" firstAttribute="trailing" secondItem="byg-cq-0sd" secondAttribute="trailingMargin" id="HBU-wv-QaR"/>
                                                 <constraint firstItem="Xhq-rA-gXa" firstAttribute="centerY" secondItem="byg-cq-0sd" secondAttribute="centerY" id="aQb-cr-63i"/>
                                                 <constraint firstItem="mr0-8z-EBc" firstAttribute="top" secondItem="byg-cq-0sd" secondAttribute="topMargin" constant="4" id="iSW-GW-PTa"/>
+                                                <constraint firstItem="Xhq-rA-gXa" firstAttribute="top" secondItem="byg-cq-0sd" secondAttribute="top" constant="7" id="v6l-fz-H2I"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -173,20 +175,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRf-59-WT4" userLabel="Transit Switch">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HBI-PZ-iLG" userLabel="Transit Switch">
+                                                    <rect key="frame" x="318" y="7" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="busValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="ejt-HP-dyX"/>
-                                                        <action selector="transitValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="IYH-Ad-MPQ"/>
+                                                        <action selector="transitValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="wet-sh-oid"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="kRf-59-WT4" firstAttribute="centerY" secondItem="Opr-et-iqL" secondAttribute="centerY" id="1AF-wa-ytX"/>
+                                                <constraint firstItem="HBI-PZ-iLG" firstAttribute="top" secondItem="PTc-M8-Mbt" secondAttribute="top" constant="7" id="2NL-ng-1s2"/>
+                                                <constraint firstAttribute="trailing" secondItem="HBI-PZ-iLG" secondAttribute="trailing" constant="8" id="A5O-Zu-W2p"/>
                                                 <constraint firstItem="Opr-et-iqL" firstAttribute="top" secondItem="PTc-M8-Mbt" secondAttribute="topMargin" constant="3" id="bIr-R4-vlf"/>
-                                                <constraint firstItem="kRf-59-WT4" firstAttribute="trailing" secondItem="PTc-M8-Mbt" secondAttribute="trailingMargin" id="dgF-Qg-Mhg"/>
                                                 <constraint firstItem="Opr-et-iqL" firstAttribute="leading" secondItem="PTc-M8-Mbt" secondAttribute="leadingMargin" id="nII-Vl-a7k"/>
-                                                <constraint firstItem="kRf-59-WT4" firstAttribute="centerY" secondItem="PTc-M8-Mbt" secondAttribute="centerY" id="v1s-Vh-y5K"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -198,13 +198,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXC-DF-G3c">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="318" y="7" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="walkingValChanged:" destination="955-Rw-95C" eventType="valueChanged" id="3ap-4W-6Zm"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Walking Routes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCZ-M4-s5u">
-                                                    <rect key="frame" x="8" y="11" width="165" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="165" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -212,8 +212,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KCZ-M4-s5u" firstAttribute="leading" secondItem="mL2-Qr-tEz" secondAttribute="leadingMargin" id="9Yc-eq-rku"/>
+                                                <constraint firstAttribute="trailing" secondItem="aXC-DF-G3c" secondAttribute="trailing" constant="8" id="Gdb-pw-GeR"/>
                                                 <constraint firstItem="aXC-DF-G3c" firstAttribute="centerY" secondItem="KCZ-M4-s5u" secondAttribute="centerY" id="LGM-Cg-Bqw"/>
                                                 <constraint firstItem="aXC-DF-G3c" firstAttribute="centerY" secondItem="mL2-Qr-tEz" secondAttribute="centerY" id="Q0t-6O-WvE"/>
+                                                <constraint firstItem="aXC-DF-G3c" firstAttribute="top" secondItem="mL2-Qr-tEz" secondAttribute="top" constant="7" id="RJk-q4-KPG"/>
                                                 <constraint firstItem="KCZ-M4-s5u" firstAttribute="top" secondItem="mL2-Qr-tEz" secondAttribute="topMargin" constant="3" id="S03-xv-5vV"/>
                                                 <constraint firstItem="aXC-DF-G3c" firstAttribute="trailing" secondItem="mL2-Qr-tEz" secondAttribute="trailingMargin" id="rcR-OZ-AnL"/>
                                             </constraints>
@@ -234,8 +236,8 @@
                         <outlet property="DrivingSwitch" destination="Xhq-rA-gXa" id="GB6-wt-SmD"/>
                         <outlet property="OpenNavTab" destination="BPc-Ru-Fzm" id="KMW-Pl-bDG"/>
                         <outlet property="SaveSettingsButton" destination="KL4-8g-PH4" id="jLO-Lk-Fk9"/>
-                        <outlet property="StampsSwitch" destination="Is6-hi-Brh" id="DIu-9f-Fd6"/>
-                        <outlet property="TransitSwitch" destination="kRf-59-WT4" id="N7c-cw-O1N"/>
+                        <outlet property="StampsSwitch" destination="saG-uR-GMJ" id="kXs-hY-8hF"/>
+                        <outlet property="TransitSwitch" destination="HBI-PZ-iLG" id="acx-eH-dVo"/>
                         <outlet property="UndoSettingChangesButton" destination="u5D-M3-PWR" id="0pP-wP-pUo"/>
                         <outlet property="WalkingSwitch" destination="aXC-DF-G3c" id="Oos-wk-BJI"/>
                     </connections>

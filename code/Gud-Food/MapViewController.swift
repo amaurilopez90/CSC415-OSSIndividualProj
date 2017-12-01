@@ -76,17 +76,44 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         BtnRoute.isEnabled = false
     }
     
+    //what happens when the user hits the 'Route' Button
     @IBAction func Route(_ sender: UIBarButtonItem) {
         let routesArray = routeIt.Route(sourceCoordinates: myLocation, destination: destination) //get the routes
-        var overlayArray = Array<MKOverlay>()
+        
+        //take note of transport types
         for route in routesArray{
-            overlayArray.append(route.polyline)
+            if route.transportType == .automobile{
+                route.polyline.title = "Driving Route"
+            }else if route.transportType == .transit{
+                route.polyline.title = "Transit Route"
+            }else if route.transportType == .walking{
+                route.polyline.title = "Walking Route"
+            }
+            Map.add(route.polyline, level: .aboveRoads)
         }
-        Map.addOverlays(overlayArray, level: .aboveRoads)
+    }
+    
+    //what is called when a polyline is added to an MKMapView
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolygonRenderer(overlay: overlay)
+        
+        //set stroke color depending on transport type
+        if overlay.title!! == "Driving Route" {
+            renderer.strokeColor = UIColor.blue
+        }else if overlay.title!! == "Transit Route"{
+            renderer.strokeColor = UIColor.yellow
+        }else if overlay.title!! == "Walking Route"{
+            renderer.strokeColor = UIColor.red
+        }
+        renderer.lineWidth = 5.0
+        
+        return renderer
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         OpenNavTab.target = self.revealViewController()

@@ -14,6 +14,7 @@ import CoreLocation
 class Routing {
     
     var settings = MapSettings()
+    var Map = MapViewController()
     func Route(sourceCoordinates: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) -> Array<MKRoute>{
         
         //create placemarks and map items for source and destination
@@ -37,6 +38,7 @@ class Routing {
         var directionRequests = Array<MKDirectionsRequest>()
         
         var settingsTable = settings.getSettings() //get current settings to filter routes
+        
         if settingsTable[1] == true{
             directionRequests.append(drivingDirectionsRequest)
         }//if driving directions is enabled
@@ -50,35 +52,38 @@ class Routing {
         }//if walking directions is enabled
         
         var routes = Array<MKRoute>()
+        var rancompletion = Bool()
         
         for directionRequest in directionRequests{
             directionRequest.source = sourceItem
             directionRequest.destination = destItem
             
-            let directions = MKDirections(request: directionRequest)
-            directions.calculate(completionHandler: {
-                response, error in
+            rancompletion = false
+            
+            var directions = MKDirections(request: directionRequest)
+            
+            //this line of code is an asynchronous task, and do this function ends before this task completion.
+            //because of this, the function's result is wrong, and so no roots are displayed
+            directions.calculate(completionHandler: {(response, error) in
                 
-                guard let response = response else{
-                    if let error = error{
-                        print("Could not get ")
-                        if directionRequest.transportType == .automobile{
-                            print("Driving directions")
-                        }
-                        if directionRequest.transportType == .transit{
-                            print("Transit directions")
-                        }
-                        if directionRequest.transportType == .walking{
-                            print("Walking directions")
-                        }
+                rancompletion = true
+                if error != nil{
+                    //if error
+                    print ("Could not get")
+                    if directionRequest.transportType == .automobile{
+                        print("Driving directions")
+                    }else if directionRequest.transportType == .transit{
+                        print("Transit directions")
+                    }else if directionRequest.transportType == .walking{
+                        print ("Walking directions")
                     }
-                    return
+                }else{
+                    //if no error
+                    routes.append((response?.routes[0])!)
                 }
-                
-                routes.append(response.routes[0]) //append the fastest route for that direction request
             })
         }
-        
         return routes
     }
+
 }
