@@ -13,7 +13,7 @@ class MapSettings: UITableViewController{
     @IBOutlet weak var UndoSettingChangesButton: UIBarButtonItem!
     @IBOutlet weak var SaveSettingsButton: UIBarButtonItem!
     @IBOutlet weak var WalkingSwitch: UISwitch!
-    @IBOutlet weak var BusSwitch: UISwitch!
+    @IBOutlet weak var TransitSwitch: UISwitch!
     @IBOutlet weak var DrivingSwitch: UISwitch!
     @IBOutlet weak var StampsSwitch: UISwitch!
     @IBOutlet weak var OpenNavTab: UIBarButtonItem!
@@ -22,7 +22,7 @@ class MapSettings: UITableViewController{
     
     private var stampsVal = Bool()
     private var drivingVal = Bool()
-    private var busVal = Bool()
+    private var transitVal = Bool()
     private var walkingVal = Bool()
     
     override func viewDidLoad() {
@@ -36,8 +36,8 @@ class MapSettings: UITableViewController{
         //grab initial states of switches
         SettingsTableArray[0] = StampsSwitch.isOn
         SettingsTableArray[1] = DrivingSwitch.isOn
-        SettingsTableArray[2] = DrivingSwitch.isOn
-        SettingsTableArray[3] = DrivingSwitch.isOn
+        SettingsTableArray[2] = TransitSwitch.isOn
+        SettingsTableArray[3] = WalkingSwitch.isOn
         
     }
     
@@ -45,10 +45,10 @@ class MapSettings: UITableViewController{
     func getSettings() -> Array<Bool>{
         return SettingsTableArray
     }
-    func setSettings(stampsVal: Bool, drivingVal: Bool, busVal: Bool, walkingVal: Bool){
+    func setSettings(stampsVal: Bool, drivingVal: Bool, transitVal: Bool, walkingVal: Bool){
         SettingsTableArray[0] = stampsVal
         SettingsTableArray[1] = drivingVal
-        SettingsTableArray[2] = busVal
+        SettingsTableArray[2] = transitVal
         SettingsTableArray[3] = walkingVal
     }
     
@@ -64,10 +64,10 @@ class MapSettings: UITableViewController{
         drivingVal = sender.isOn
     }
     
-    @IBAction func busValChanged(_ sender: UISwitch) {
+    @IBAction func transitValChanged(_ sender: UISwitch) {
         SaveSettingsButton.isEnabled = true
         UndoSettingChangesButton.isEnabled = true
-        busVal = sender.isOn
+        transitVal = sender.isOn
     }
     
     @IBAction func walkingValChanged(_ sender: UISwitch) {
@@ -79,14 +79,14 @@ class MapSettings: UITableViewController{
     
     //save the setting and repopulate the settings table
     @IBAction func saveSettings(_ sender: UIBarButtonItem) {
-        setSettings(stampsVal: stampsVal, drivingVal: drivingVal, busVal: busVal, walkingVal: walkingVal)
+        setSettings(stampsVal: stampsVal, drivingVal: drivingVal, transitVal: transitVal, walkingVal: walkingVal)
     }
     
     //undo current changes, revert the buttons back to original states
     @IBAction func undoChanges(_ sender: UIBarButtonItem) {
         StampsSwitch.isOn = SettingsTableArray[0]
         DrivingSwitch.isOn = SettingsTableArray[1]
-        BusSwitch.isOn = SettingsTableArray[2]
+        TransitSwitch.isOn = SettingsTableArray[2]
         WalkingSwitch.isOn = SettingsTableArray[3]
     }
     

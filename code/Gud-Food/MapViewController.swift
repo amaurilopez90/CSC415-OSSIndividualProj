@@ -65,10 +65,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     //When user selects and deselects annotations, enable/disable the 'route' btn
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if !(view.annotation?.coordinate.latitude == myLocation.latitude && view.annotation?.coordinate.longitude == myLocation.longitude){ //don't enable the 'Route' button if the selected annotation is the user's own location
+    func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+        if !(annotation.coordinate.latitude == myLocation.latitude && annotation.coordinate.longitude == myLocation.longitude){ //don't enable the 'Route' button if the selected annotation is the user's own location
             BtnRoute.isEnabled = true
-            destination = view.annotation as! MKPointAnnotation //set the target destination as the currently selected location
+            destination = annotation as! MKPointAnnotation //set the target destination as the currently selected location
         }
 
     }
@@ -77,7 +77,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     @IBAction func Route(_ sender: UIBarButtonItem) {
-        routeIt.Route(destination: destination)
+        var routesArray = routeIt.Route(destination: destination) //get the routes
+        var overlayArray = Array<MKOverlay>()
+        for route in routesArray{
+            overlayArray.append(route.polyline)
+        }
+        Map.addOverlays(overlayArray, level: .aboveRoads)
     }
     
     override func viewDidLoad() {

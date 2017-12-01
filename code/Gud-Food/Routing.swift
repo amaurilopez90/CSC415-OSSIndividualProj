@@ -14,7 +14,7 @@ import CoreLocation
 class Routing {
     
     var settings = MapSettings()
-    func Route(destination: MKPointAnnotation) -> MKRoute{
+    func Route(destination: MKPointAnnotation) -> Array<MKRoute>{
         
         //create placemarks and map items for source and destination
         let sourcePlacemark = MKPlacemark(coordinate: destination.coordinate)
@@ -23,44 +23,62 @@ class Routing {
         let sourceItem = MKMapItem(placemark: sourcePlacemark)
         let destItem = MKMapItem(placemark: destPlacemark)
         
-        //populate a directions request array
+        //set up the different kinds of direction requests
+        var drivingDirectionsRequest = MKDirectionsRequest()
+        var transitDirectionsRequest = MKDirectionsRequest()
+        var walkingDirectionsRequest = MKDirectionsRequest()
+        
+        drivingDirectionsRequest.transportType = .automobile
+        transitDirectionsRequest.transportType = .transit
+        walkingDirectionsRequest.transportType = .walking
+        
+        
+        //populate a directions request array: Direction requests from Apple Cloud
         var directionRequests = Array<MKDirectionsRequest>()
         
         var settingsTable = settings.getSettings() //get current settings to filter routes
         if settingsTable[1] == true{
-            //directions request from Apple Cloud
-            directionRequests[0].source = sourceItem
-            directionRequests[0].destination = destItem
-            directionRequests[0].transportType = .automobile
+            directionRequests.append(drivingDirectionsRequest)
         }//if driving directions is enabled
         
         if settingsTable[2] == true{
-            directionRequests[1].source = sourceItem
-            directionRequests[1].destination = destItem
-            directionRequests[1].transportType = .transit
-        }
+            directionRequests.append(transitDirectionsRequest)
+        }//if transit directions is enabled
+        
         if settingsTable[3] == true{
-            directionRequests[2].source = sourceItem
-            directionRequests[2].destination = destItem
-            directionRequests[2].transportType = .walking
+            directionRequests.append(walkingDirectionsRequest)
+        }//if walking directions is enabled
+        
+        var routes = Array<MKRoute>()
+        
+        for directionRequest in directionRequests{
+            directionRequest.source = sourceItem
+            directionRequest.destination = destItem
+            
+            var directions = MKDirections(request: directionRequest)
+            directions.calculate(completionHandler: {
+                response, error in
+                
+                guard let response = response else{
+                    if let error = error{
+                        print("Could not get ")
+                        if directionRequest.transportType == .automobile{
+                            print("Driving directions")
+                        }
+                        if directionRequest.transportType == .transit{
+                            print("Transit directions")
+                        }
+                        if directionRequest.transportType == .walking{
+                            print("Walking directions")
+                        }
+                    }
+                    return
+                }
+                
+                routes.append(response.routes[0]) //append the fastest route for that direction request
+            })
         }
         
-        
-        let directions = MKDirections(request: directionRequest)
-        var route = MKRoute()
-        directions.calculate(completionHandler: {
-            response, error in
-            
-            guard let response = response else{
-                if let error = error{
-                    print("Something went wrong, there might not be a driving route")
-                }
-                return
-            }
-            
-            route = response.routes[0] //grab first route (fastest one)
-
-        })
-        return route
+        return routes
     }
 }
