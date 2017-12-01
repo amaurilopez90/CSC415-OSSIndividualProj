@@ -14,7 +14,6 @@ import CoreLocation
 class Routing {
     
     var settings = MapSettings()
-    var Map = MapViewController()
     func Route(sourceCoordinates: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) -> Array<MKRoute>{
         
         //create placemarks and map items for source and destination

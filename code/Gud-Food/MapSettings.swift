@@ -78,6 +78,8 @@ class MapSettings: UITableViewController{
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: {(action) -> Void in
             self.setSettings(stampsVal: self.StampsSwitch.isOn, drivingVal: self.DrivingSwitch.isOn, transitVal: self.TransitSwitch.isOn, walkingVal: self.WalkingSwitch.isOn)
             
+            self.SaveSettingsButton.isEnabled = false
+            self.UndoSettingChangesButton.isEnabled = false
             print("Settings Saved")
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) -> Void in
