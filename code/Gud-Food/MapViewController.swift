@@ -78,24 +78,37 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     //what happens when the user hits the 'Route' Button
     @IBAction func Route(_ sender: UIBarButtonItem) {
-        let routesArray = routeIt.Route(sourceCoordinates: myLocation, destination: destination) //get the routes
-        
-        //take note of transport types
-        for route in routesArray{
-            if route.transportType == .automobile{
-                route.polyline.title = "Driving Route"
-            }else if route.transportType == .transit{
-                route.polyline.title = "Transit Route"
-            }else if route.transportType == .walking{
-                route.polyline.title = "Walking Route"
+        routeIt.Route(sourceCoordinates: myLocation, destination: destination){(error, response, directionRequest) in
+            if error != nil{
+                //if error
+                print ("Could not get")
+                if directionRequest.transportType == .automobile{
+                    print("Driving directions")
+                }else if directionRequest.transportType == .transit{
+                    print("Transit directions")
+                }else if directionRequest.transportType == .walking{
+                    print ("Walking directions")
+                }
+            }else{
+                var route = response?.routes[0]
+                if route?.transportType == .automobile{
+                    route?.polyline.title = "Driving Route"
+                }
+                else if route?.transportType == .transit{
+                    route?.polyline.title = "Transit Route"
+                }else if route?.transportType == .walking{
+                    route?.polyline.title = "Walking Route"
+                }
+                self.Map.add((route?.polyline)!, level: .aboveRoads)
+                var rect = route?.polyline.boundingMapRect
+                self.Map.setRegion(MKCoordinateRegionForMapRect(rect!), animated: true)
             }
-            Map.add(route.polyline, level: .aboveRoads)
         }
     }
     
     //what is called when a polyline is added to an MKMapView
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolygonRenderer(overlay: overlay)
+        let renderer = MKPolylineRenderer(overlay: overlay)
         
         //set stroke color depending on transport type
         if overlay.title!! == "Driving Route" {
@@ -127,6 +140,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         Map.showsPointsOfInterest = true
         Map.showsUserLocation = true
         
+        //request for authorizations
         manager.requestWhenInUseAuthorization()
         manager.requestAlwaysAuthorization()
         

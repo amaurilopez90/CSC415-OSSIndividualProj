@@ -14,7 +14,7 @@ import CoreLocation
 class Routing {
     
     var settings = MapSettings()
-    func Route(sourceCoordinates: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) -> Array<MKRoute>{
+    func Route(sourceCoordinates: CLLocationCoordinate2D, destination: CLLocationCoordinate2D, completion: @escaping (_ error: Error?, _ response: MKDirectionsResponse?, _ directionRequest: MKDirectionsRequest) -> ()){
         
         //create placemarks and map items for source and destination
         let sourcePlacemark = MKPlacemark(coordinate: sourceCoordinates)
@@ -51,38 +51,26 @@ class Routing {
         }//if walking directions is enabled
         
         var routes = Array<MKRoute>()
-        var rancompletion = Bool()
         
         for directionRequest in directionRequests{
             directionRequest.source = sourceItem
             directionRequest.destination = destItem
             
-            rancompletion = false
             
             var directions = MKDirections(request: directionRequest)
             
-            //this line of code is an asynchronous task, and do this function ends before this task completion.
+            //this line of code is an asynchronous task, and this function ends before this task completes.
             //because of this, the function's result is wrong, and so no roots are displayed
             directions.calculate(completionHandler: {(response, error) in
-                
-                rancompletion = true
-                if error != nil{
-                    //if error
-                    print ("Could not get")
-                    if directionRequest.transportType == .automobile{
-                        print("Driving directions")
-                    }else if directionRequest.transportType == .transit{
-                        print("Transit directions")
-                    }else if directionRequest.transportType == .walking{
-                        print ("Walking directions")
-                    }
-                }else{
-                    //if no error
-                    routes.append((response?.routes[0])!)
+                if let route = response?.routes.first{
+                    print("Getting routes")
                 }
+                completion(error, response, directionRequest)
+
             })
+            
         }
-        return routes
+        
     }
 
 }
